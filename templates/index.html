@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+        }
+
+        header img.header-logo {
+            max-width: 100px;
+            height: auto;
+            display: block;
+            margin: 0 auto; /* Center the image */
+            margin-bottom: 10px;
+            border-radius: 50%;
+        }
+        nav {
+            text-align: center;
+            margin: 1rem 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #007BFF;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .cafe {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .cafe h3 {
+            margin-top: 0;
+        }
+        .cafe img {
+            max-width: 100%;
+            height: auto;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="static/assets/img/cafe.jpg" alt="Cafe Logo" class="header-logo">
+        <h1>Welcome to the Cafe API</h1>
+        <p>Discover your next favorite cafe in London!</p>
+    </header>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/random">Random Cafe</a>
+        <a href="/all">All Cafes</a>
+        <a href="/add">Add a Cafe</a>
+        <a href="/modify">Modify a Cafe</a>
+    </nav>
+
+    <div class="container">
+        <h2>About This API</h2>
+        <p>Use the links above to explore cafes or retrieve data via the API endpoints.</p>
+        <p>You can find the best cafes in All Cafe, modify any of them in Modify a cafe section (if you are authorized 😉), add any that you wish or ask the website to recommend one to you!</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Cafe API | Built by ACI</p>
+    </footer>
+</body>
+</html>

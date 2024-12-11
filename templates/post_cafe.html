@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Cafe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .form-container h2 {
+            text-align: center;
+        }
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-container form label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-container form input,
+        .form-container form textarea,
+        .form-container form button {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-container form button {
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .form-container form button:hover {
+            background: #555;
+        }
+
+        .flashes {
+            list-style: none;
+            padding: 0;
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: center;
+        }
+        .flashes li {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .flashes li.success {
+            color: #155724;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+        }
+        .flashes li.error {
+            color: #721c24;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+        }
+
+        .back-button {
+            display: inline-block;
+            text-align: center;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            width: 97%;
+        }
+
+        .back-button:hover {
+            background-color: #444;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Add a New Cafe</h1>
+    </header>
+    <div class="form-container">
+        <h2>Submit a New Cafe</h2>
+        <form action="/add" method="POST">
+            {{ form.hidden_tag() }}
+
+            <label for="name">{{ form.name.label }}</label>
+            {{ form.name(size=40) }}
+
+            <label for="map_url">{{ form.map_url.label }}</label>
+            {{ form.map_url(size=40) }}
+
+            <label for="img_url">{{ form.img_url.label }}</label>
+            {{ form.img_url(size=40) }}
+
+            <label for="location">{{ form.location.label }}</label>
+            {{ form.location(size=40) }}
+
+            <label>{{ form.has_sockets.label }}</label>
+            {{ form.has_sockets() }}
+
+            <label>{{ form.has_toilet.label }}</label>
+            {{ form.has_toilet() }}
+
+            <label>{{ form.has_wifi.label }}</label>
+            {{ form.has_wifi() }}
+
+            <label>{{ form.can_take_calls.label }}</label>
+            {{ form.can_take_calls() }}
+
+            <label for="seats">{{ form.seats.label }}</label>
+            {{ form.seats() }}
+
+            <label for="coffee_price">{{ form.coffee_price.label }}</label>
+            {{ form.coffee_price() }}
+
+            {{ form.submit(class="button") }}
+        </form>
+
+        <a href="/" class="back-button">Back to Main Page</a>
+    </div>
+</body>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class="flashes">
+      {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+</html>
